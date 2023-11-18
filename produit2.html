@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produit 2 - Yves Rocher</title>
+    <link rel="stylesheet" href="styless.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1>Yves Rocher</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="product-detail">
+            <img src="coffret.webp" alt="Produit 2">
+            <h2>Coffret Maquillage</h2>
+            <p class="price">Prix: 49.95e</p>
+            <button id="buyNowBtn" class="btn">Acheter maintenant</button>
+        </div>
+
+        <div class="product-sale hidden">
+            <img src="produit2.jpg" alt="Produit 2">
+            <h2>Produit 2</h2>
+            <p>Offre spéciale! Achetez maintenant et obtenez une réduction de 10%.</p>
+            <p class="price">Prix réduit: $Y.YY</p>
+            <form action="traitement-achat.php" method="post">
+                <label for="quantity">Quantité:</label>
+                <input type="number" id="quantity" name="quantity" min="1" value="1">
+                <button type="submit" class="btn">Ajouter au Panier</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('buyNowBtn').addEventListener('click', function() {
+            // Affiche la section de vente et masque la section de détails
+            document.querySelector('.product-detail').classList.add('hidden');
+            document.querySelector('.product-sale').classList.remove('hidden');
+        });
+    </script>
+
+</body>
+</html>
